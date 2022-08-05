@@ -17,8 +17,16 @@ public class RestController1 {
         user.setFirstName(firstName);
         return user.getFirstName();
     }
+
     @GetMapping("/param/{name}")
     public String path(@PathVariable String name) {
         return name;
+    }
+
+    @PostMapping("/post")
+    public String post(@RequestBody User user) {
+        user.setFirstName(user.getFirstName());
+        user.setLastName(user.getLastName());
+        return user.toString();
     }
 }
