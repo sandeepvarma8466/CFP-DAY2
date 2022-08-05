@@ -29,4 +29,15 @@ public class RestController1 {
         user.setLastName(user.getLastName());
         return user.toString();
     }
+    @PutMapping("/put/{name}")
+    public String put(@PathVariable String name) {
+        return name;
+    }
+
+    @PutMapping("/reqparam")
+    public String reqparam(@RequestParam String lastname){
+        User user = new User();
+        user.setLastName(lastname);
+        return user.getFirstName();
+    }
 }
