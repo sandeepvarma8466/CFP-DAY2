@@ -30,10 +30,10 @@ public class RestController1 {
         return user.toString();
     }
     @PutMapping("/put/{firstName}")
-    public String put(@PathVariable String firstName, @RequestParam(value = "lastName") String lastNAme) {
+    public String put(@PathVariable String firstName, @RequestParam String lastName) {
         User user = new User();
-        user.setLastName(lastNAme);
-        return "Hello" + firstName+" "+ user.getFirstName()+ "!";
+        user.setLastName(lastName);
+        return firstName + " "+user.getLastName();
     }
 
 }
